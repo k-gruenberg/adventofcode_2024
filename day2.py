@@ -1,0 +1,2 @@
+reports = [[int(num) for num in line.split()] for line in open("day2_input.txt").read().splitlines()]
+print(len([r for r in reports if (r == sorted(r) or r == sorted(r, reverse=True)) and all(1 <= abs(r[i] - r[i+1]) <= 3 for i in range(len(r)-1))]))
